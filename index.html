@@ -3,366 +3,325 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TC813 2025 S4 績效報告 - 完整補完版</title>
+    <title>2026 Season 1 Performance Report</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Poppins:wght@600;800&family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        /* 1. 核心設置 - 1280x720 規格 */
-        * { box-sizing: border-box; }
-        body {
-            background-color: #020617; 
-            margin: 0; padding: 20px 0;
-            display: grid; place-items: center;
-            min-height: 100vh;
-            color: #f8fafc;
-        }
+/* ==========================================================================
+   THEME: PREMIUM DARK & GOLD
+   Designed for high-end business reporting.
+   ==========================================================================
+*/
+* { box-sizing: border-box; }
 
-        .slide-container {
-            width: 1280px; height: 720px;
-            background-color: #0f172a; 
-            border-radius: 12px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            display: flex; flex-direction: column;
-            padding: 60px; overflow: hidden;
-            position: relative;
-            font-family: 'Noto Sans TC', sans-serif;
-        }
+body {
+    background-color: #0f172a; /* Slate 900 */
+    display: grid;
+    gap: 40px;
+    grid-template-columns: 1fr;
+    margin: 0;
+    min-height: 100vh;
+    padding: 40px 0;
+    place-items: center;
+    font-family: 'Inter', sans-serif;
+}
 
-        /* 背景裝飾 */
-        .slide-container::before {
-            content: ''; position: absolute; top: -50%; left: -50%;
-            width: 200%; height: 200%;
-            background: radial-gradient(circle, rgba(16, 185, 129, 0.05) 0%, transparent 70%);
-            z-index: 0; pointer-events: none;
-        }
+.slide-container {
+    background-color: #1e293b; /* Slate 800 */
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    height: 720px;
+    width: 1280px;
+    overflow: hidden;
+    padding: 60px;
+    position: relative;
+    color: #f8fafc;
+}
 
-        .slide-container > * { z-index: 1; position: relative; }
+/* Gold Accent Bar */
+.slide-container::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 6px;
+    background: linear-gradient(90deg, #fbbf24, #d97706);
+    z-index: 10;
+}
 
-        /* 2. 字體與排版 */
-        h1, h2, h3 { font-family: 'Poppins', 'Noto Sans TC', sans-serif; margin: 0; }
-        h1 { font-size: 80px; font-weight: 800; color: #10b981; line-height: 1; }
-        .slide-title { font-size: 42px; color: #f8fafc; margin-bottom: 30px; border-left: 8px solid #10b981; padding-left: 20px; text-transform: uppercase; }
-        p, li, td, th { font-size: 18px; line-height: 1.6; color: #cbd5e1; }
-        .highlight { color: #10b981; font-weight: bold; }
-        .gold-highlight { color: #fbbf24; font-weight: bold; }
+/* Background Decoration */
+.slide-container::after {
+    content: '';
+    position: absolute;
+    bottom: -100px; right: -100px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(251, 191, 36, 0.05) 0%, rgba(30, 41, 59, 0) 70%);
+    z-index: 0;
+    pointer-events: none;
+}
 
-        /* 3. 佈局組件 */
-        .content-area { flex-grow: 1; display: flex; flex-direction: column; justify-content: center; width: 100%; }
+.slide-container > * { position: relative; z-index: 1; }
 
-        /* 表格樣式 */
-        table { width: 100%; border-collapse: collapse; }
-        th { background-color: #1e293b; color: #10b981; text-align: left; padding: 15px 20px; font-size: 16px; border-bottom: 2px solid #334155; position: sticky; top: 0; z-index: 10; }
-        td { padding: 12px 20px; border-bottom: 1px solid #1e293b; font-family: 'Roboto Mono', monospace; font-size: 16px; }
-        tr:nth-child(even) { background-color: rgba(255, 255, 255, 0.02); }
-        tr:hover { background-color: rgba(16, 185, 129, 0.05); }
+/* Typography */
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: #fbbf24; /* Gold */
+    margin: 0;
+    line-height: 1.2;
+}
 
-        /* 滾動條美化 */
-        .scrollable-table { max-height: 480px; overflow-y: auto; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); }
-        .scrollable-table::-webkit-scrollbar { width: 8px; }
-        .scrollable-table::-webkit-scrollbar-track { background: #0f172a; }
-        .scrollable-table::-webkit-scrollbar-thumb { background: #334155; border-radius: 10px; }
-        .scrollable-table::-webkit-scrollbar-thumb:hover { background: #10b981; }
+.slide-title {
+    font-size: 48px;
+    margin-bottom: 40px;
+    color: #f8fafc;
+    border-left: 5px solid #fbbf24;
+    padding-left: 20px;
+    width: 100%;
+}
 
-        /* 圖表樣式 - 大字版 */
-        .bar-chart { display: flex; flex-direction: column; gap: 20px; width: 100%; }
-        .bar-row { display: flex; align-items: center; gap: 30px; }
-        .bar-label { width: 220px; text-align: right; font-weight: bold; font-size: 26px; color: #f8fafc; }
-        .bar-outer { flex-grow: 1; height: 55px; background: #1e293b; border-radius: 6px; overflow: hidden; box-shadow: inset 0 2px 4px rgba(0,0,0,0.3); }
-        .bar-inner { 
-            height: 100%; 
-            background: linear-gradient(90deg, #10b981, #34d399); 
-            border-radius: 4px; 
-            display: flex; 
-            align-items: center; 
-            padding-left: 20px; 
-            font-size: 22px; 
-            font-weight: 800; 
-            color: #020617; 
-            font-family: 'Roboto Mono', monospace;
-        }
+p, li, td {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #cbd5e1;
+}
 
-        /* 標牌樣式 */
-        .tiled-content { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; width: 100%; }
-        .tile { background: #1e293b; padding: 30px; border-radius: 12px; border-top: 4px solid #10b981; }
-        .tile h3 { font-size: 24px; color: #f8fafc; margin-bottom: 15px; }
-        .tile .icon { font-size: 40px; color: #10b981; margin-bottom: 20px; }
+.content-area {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: center;
+    width: 100%;
+}
 
-        /* 時間軸樣式 */
-        .timeline { display: flex; justify-content: space-around; position: relative; margin-top: 80px; }
-        .timeline::before { content: ''; position: absolute; top: 25px; left: 10%; width: 80%; height: 4px; background: #334155; z-index: 0; }
-        .timeline-item { text-align: center; width: 30%; position: relative; z-index: 1; }
-        .dot { width: 24px; height: 24px; background: #10b981; border-radius: 50%; margin: 15px auto; box-shadow: 0 0 15px #10b981; border: 4px solid #0f172a; }
-        .timeline-item h4 { color: #f8fafc; margin: 10px 0; font-size: 22px; font-weight: bold; }
-        .timeline-item p { font-size: 18px; color: #94a3b8; }
+/* Layout: Title Slide */
+.full-bg-image {
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.title-box {
+    border: 2px solid rgba(251, 191, 36, 0.3);
+    padding: 60px 100px;
+    background: rgba(30, 41, 59, 0.85); /* Darker backdrop for readability */
+    backdrop-filter: blur(10px);
+    border-radius: 4px;
+}
 
-        /* 特殊佈局: Bleed Image */
-        .bleed-image-layout { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 0 !important; align-items: start; }
-        .bleed-text-side { padding: 60px; display: flex; flex-direction: column; justify-content: center; height: 100%; }
-        .bleed-image-side { height: 720px; width: 100%; object-fit: cover; }
+/* Layout: Tiled Grid */
+.tiled-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 100%;
+}
+.tile {
+    background: rgba(51, 65, 85, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+}
+.tile .icon { font-size: 40px; color: #fbbf24; margin-bottom: 15px; }
+.tile h3 { font-size: 24px; color: #fff; margin-bottom: 5px; }
+.tile p { font-size: 16px; color: #94a3b8; margin: 0; }
+
+/* Layout: Table */
+table { width: 100%; border-collapse: collapse; }
+th {
+    background-color: #0f172a;
+    color: #fbbf24;
+    padding: 20px;
+    text-align: left;
+    font-size: 18px;
+    border-bottom: 2px solid #fbbf24;
+}
+td { padding: 18px 20px; border-bottom: 1px solid #334155; }
+.highlight-row td { color: #fbbf24; font-weight: bold; }
+
+/* Layout: Timeline */
+.timeline-layout { position: relative; display: flex; justify-content: space-between; margin-top: 50px; }
+.timeline-line { position: absolute; top: 30px; width: 100%; height: 2px; background: rgba(255,255,255,0.2); }
+.timeline-item { position: relative; text-align: center; width: 25%; }
+.timeline-dot {
+    width: 60px; height: 60px; background: #1e293b; border: 2px solid #fbbf24;
+    border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;
+    color: #fbbf24; font-weight: bold; font-size: 16px;
+    z-index: 2; position: relative;
+}
 
     </style>
 </head>
 <body>
 
-<!-- Slide 1: 封面 -->
-<div class="slide-container" id="slide1" style="background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.9)), url('http://googleusercontent.com/image_collection/image_retrieval/11816614641609322992'); background-size: cover;">
-    <div class="content-area" style="text-align: center;">
-        <p style="letter-spacing: 5px; color: #10b981; font-weight: bold;">TC813 | 中銘通訊處 | 變強好簡單</p>
-        <h1 style="font-size: 110px;">2025 <span style="color: #fff;">SEASON 4</span></h1>
-        <div style="height: 5px; width: 150px; background: #10b981; margin: 40px auto;"></div>
-        <p class="subtitle" style="font-size: 28px; color: #94a3b8;">績效組 季度戰略報告</p>
-        <div style="margin-top: 60px; display: flex; justify-content: center; gap: 20px;">
-            <span style="background: rgba(16, 185, 129, 0.1); border: 1px solid #10b981; padding: 10px 20px; border-radius: 50px; color: #10b981;">#新人15C拿25000</span>
-            <span style="background: rgba(16, 185, 129, 0.1); border: 1px solid #10b981; padding: 10px 20px; border-radius: 50px; color: #10b981;">#個人20C拿25000</span>
-            <span style="background: rgba(16, 185, 129, 0.1); border: 1px solid #10b981; padding: 10px 20px; border-radius: 50px; color: #10b981;">#追上CSM</span>
+<!-- Slide 1: Title Slide -->
+<div class="slide-container full-bg-image" id="slide1" style="background-image: url('http://googleusercontent.com/image_collection/image_retrieval/4228143184556225221');">
+    <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(15,23,42,0.6); z-index: 0;"></div>
+    <div class="title-box">
+        <h1>2026 SEASON 1</h1>
+        <p style="color: #fbbf24; font-size: 32px; font-weight: 300; letter-spacing: 4px; text-transform: uppercase; margin-top: 20px;">
+            績效組報告
+        </p>
+        <div style="color: #94a3b8; font-size: 18px; margin-top: 40px; letter-spacing: 1px;">
+            813 中銘通訊處
         </div>
     </div>
 </div>
 
-<!-- Slide 2: 日報表章節頁 -->
-<div class="slide-container" id="slide2" style="background-color: #020617; justify-content: center; align-items: center; text-align: center;">
-    <div style="border-bottom: 2px solid #10b981; padding-bottom: 20px; margin-bottom: 20px;">
-        <h2 style="font-size: 80px; letter-spacing: 10px;">第一工作月日報表</h2>
-    </div>
-    <p style="font-size: 24px; color: #64748b; letter-spacing: 5px;">Daily Performance Tracking</p>
-</div>
-
-<!-- Slide 3: 具體日報表內容 -->
-<div class="slide-container" id="slide3">
-    <h2 class="slide-title">114.12.15 - 12.18 業績報表明細</h2>
-    <div class="content-area">
-        <table>
-            <thead>
-                <tr>
-                    <th>日期</th>
-                    <th>姓名</th>
-                    <th>職稱</th>
-                    <th>件數</th>
-                    <th>當日壽險 FYP</th>
-                    <th>壽險 FYC</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>114.12.15</td>
-                    <td>汪淑玲</td>
-                    <td>MM</td>
-                    <td>1</td>
-                    <td>16,930</td>
-                    <td>5,169</td>
-                </tr>
-                <tr>
-                    <td>114.12.15</td>
-                    <td>黃琳堯</td>
-                    <td>MM</td>
-                    <td>1</td>
-                    <td>24,981</td>
-                    <td>9,563</td>
-                </tr>
-                <tr>
-                    <td>114.12.18</td>
-                    <td>施昕余</td>
-                    <td>MAM</td>
-                    <td>2</td>
-                    <td>81,899</td>
-                    <td>24,867</td>
-                </tr>
-            </tbody>
-        </table>
-        <p style="margin-top: 30px; font-style: italic; color: #10b981; font-size: 20px;"><i class="fa-solid fa-fire"></i> 加油！持續衝刺中。</p>
-    </div>
-</div>
-
-<!-- Slide 4: 受理排名 (大字版) -->
-<div class="slide-container" id="slide4">
-    <h2 class="slide-title">114.12 受理業績排行</h2>
-    <div class="content-area">
-        <div class="bar-chart">
-            <div class="bar-row">
-                <div class="bar-label">高聖芳</div>
-                <div class="bar-outer"><div class="bar-inner" style="width: 95%;">FYC: 99,754</div></div>
-            </div>
-            <div class="bar-row">
-                <div class="bar-label">孫桂英</div>
-                <div class="bar-outer"><div class="bar-inner" style="width: 80%;">FYC: 30,723</div></div>
-            </div>
-            <div class="bar-row">
-                <div class="bar-label">虞哲煬</div>
-                <div class="bar-outer"><div class="bar-inner" style="width: 75%;">FYC: 30,119</div></div>
-            </div>
-            <div class="bar-row">
-                <div class="bar-label">李秉芳</div>
-                <div class="bar-outer"><div class="bar-inner" style="width: 70%;">FYC: 28,968</div></div>
-            </div>
-            <div class="bar-row">
-                <div class="bar-label">黃琳堯</div>
-                <div class="bar-outer"><div class="bar-inner" style="width: 60%;">FYC: 22,801</div></div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Slide 5: 獎金章節頁 -->
-<div class="slide-container" id="slide5" style="background-color: #064e3b; justify-content: center; align-items: center; text-align: center;">
-    <div style="padding: 40px; border: 4px solid #10b981; border-radius: 20px;">
-        <h2 style="font-size: 70px; color: #fff;">獎金試算與獎勵追蹤</h2>
-        <hr style="border: 1px solid rgba(255,255,255,0.2); width: 80%; margin: 30px auto;">
-        <p style="font-size: 20px; letter-spacing: 3px;">INCENTIVE CALCULATION & BONUS TRACKING</p>
-    </div>
-</div>
-
-<!-- Slide 6: 工季獎金表 -->
-<div class="slide-container" id="slide6">
-    <h2 class="slide-title">114年「12、1工季獎金」追蹤表</h2>
-    <div class="content-area">
-        <table>
-            <thead>
-                <tr>
-                    <th>姓名</th>
-                    <th>合計 FYC</th>
-                    <th>目前已達門檻</th>
-                    <th>距下一級差額</th>
-                    <th>比例</th>
-                    <th>目前獎金</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td class="highlight">高聖芳</td><td>155,873</td><td>150,000 以上</td><td>達標</td><td>18%</td><td class="highlight">28,057</td></tr>
-                <tr><td class="highlight">李秉芳</td><td>109,383</td><td>90,000 ~ 119k</td><td>(10,617)</td><td>12%</td><td class="highlight">13,126</td></tr>
-                <tr><td>李敏櫻</td><td>82,397</td><td>60,000 ~ 89k</td><td>(7,603)</td><td>10%</td><td>8,240</td></tr>
-                <tr><td>虞哲煬</td><td>63,069</td><td>60,000 ~ 89k</td><td>(26,931)</td><td>10%</td><td>6,307</td></tr>
-            </tbody>
-        </table>
-    </div>
-</div>
-
-<!-- Slide 7: 全員年度核實 (24人) -->
-<div class="slide-container" id="slide7">
-    <h2 class="slide-title">114 年度核實業績與年終試算 (全員 24 位)</h2>
-    <div class="content-area">
-        <div class="scrollable-table">
-            <table>
-                <thead>
-                    <tr>
-                        <th>姓名</th>
-                        <th>年度總 FYC (合計)</th>
-                        <th>獎金比例</th>
-                        <th>獎金試算金額</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td class="highlight">陳冠辰</td><td>2,029,102</td><td>20.00%</td><td class="gold-highlight">405,820</td></tr>
-                    <tr><td class="highlight">高聖芳</td><td>997,509</td><td>20.00%</td><td class="gold-highlight">199,502</td></tr>
-                    <tr><td>施昕余</td><td>783,877</td><td>17.50%</td><td>137,178</td></tr>
-                    <tr><td>黃琳堯</td><td>776,089</td><td>17.50%</td><td>135,816</td></tr>
-                    <tr><td>蔡亦程</td><td>727,939</td><td>17.50%</td><td>127,389</td></tr>
-                    <tr><td>孫桂英</td><td>693,464</td><td>15.00%</td><td>104,020</td></tr>
-                    <tr><td>李秉芳</td><td>588,733</td><td>15.00%</td><td>88,310</td></tr>
-                    <tr><td>張嘉芸</td><td>582,641</td><td>15.00%</td><td>87,396</td></tr>
-                    <tr><td>謝麗芳</td><td>415,087</td><td>12.50%</td><td>51,886</td></tr>
-                    <tr><td>虞哲煬</td><td>393,269</td><td>10.00%</td><td>39,327</td></tr>
-                    <tr><td>林淑慧</td><td>390,359</td><td>10.00%</td><td>39,036</td></tr>
-                    <tr><td>汪淑玲</td><td>357,651</td><td>10.00%</td><td>35,765</td></tr>
-                    <tr><td>劉家榮</td><td>311,310</td><td>10.00%</td><td>31,131</td></tr>
-                    <tr><td>李敏櫻</td><td>301,814</td><td>10.00%</td><td>30,181</td></tr>
-                    <tr><td>林宸禾</td><td>192,900</td><td>6.00%</td><td>11,574</td></tr>
-                    <tr><td>蘇慶恩</td><td>190,395</td><td>6.00%</td><td>11,424</td></tr>
-                    <tr><td>陳錦紅</td><td>164,369</td><td>6.00%</td><td>9,862</td></tr>
-                    <tr><td>秦慧娟</td><td>149,073</td><td>6.00%</td><td>8,944</td></tr>
-                    <tr><td>施江燁</td><td>117,772</td><td>4.00%</td><td>4,711</td></tr>
-                    <tr><td>廖婉辛</td><td>102,594</td><td>4.00%</td><td>4,104</td></tr>
-                    <tr><td>林佩怡</td><td>96,056</td><td>4.00%</td><td>3,842</td></tr>
-                    <tr><td>陳羿晴</td><td>30,310</td><td>0.00%</td><td>0</td></tr>
-                    <tr><td>廖寶福</td><td>7,491</td><td>0.00%</td><td>0</td></tr>
-                    <tr><td>林君溥</td><td>3,413</td><td>0.00%</td><td>0</td></tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
-
-<!-- Slide 8: 英雄榜 -->
-<div class="slide-container" id="slide8">
-    <h2 class="slide-title">115年 黃金週英雄榜</h2>
+<!-- Slide 2: Campaign Targets -->
+<div class="slide-container" id="slide2">
+    <h2 class="slide-title">重點推動目標</h2>
     <div class="content-area">
         <div class="tiled-content">
             <div class="tile">
+                <div class="icon"><i class="fa-solid fa-mug-hot"></i></div>
+                <h3>首二日早餐會</h3>
+                <p>Breakfast Meeting</p>
+            </div>
+            <div class="tile">
+                <div class="icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+                <h3>首二週5C拿獎金</h3>
+                <p>Early Bird Bonus</p>
+            </div>
+            <div class="tile">
+                <div class="icon"><i class="fa-solid fa-briefcase"></i></div>
+                <h3>主管20C拿36,000</h3>
+                <p>Manager Incentive</p>
+            </div>
+            <div class="tile">
+                <div class="icon"><i class="fa-solid fa-user-plus"></i></div>
+                <h3>持續增員</h3>
+                <p>Recruitment Focus</p>
+            </div>
+            <div class="tile">
                 <div class="icon"><i class="fa-solid fa-crown"></i></div>
-                <h3>孫桂英 (Hero)</h3>
-                <p>上傳件數：<span class="highlight">4 件</span></p>
-                <p>累計保費：4,176,725</p>
-                <p>累計 FYC：<span class="highlight">348,305</span></p>
+                <h3>成為大直轄主管</h3>
+                <p>Grand District Director</p>
             </div>
             <div class="tile">
-                <div class="icon"><i class="fa-solid fa-shield-halved"></i></div>
-                <h3>陳冠辰</h3>
-                <p>上傳件數：2 件</p>
-                <p>累計保費：395,831</p>
-                <p>累計 FYC：<span class="highlight">78,873</span></p>
-            </div>
-            <div class="tile">
-                <div class="icon"><i class="fa-solid fa-medal"></i></div>
-                <h3>施昕余</h3>
-                <p>上傳件數：4 件</p>
-                <p>累計保費：188,100</p>
-                <p>累計 FYC：<span class="highlight">59,400</span></p>
+                <div class="icon"><i class="fa-solid fa-users"></i></div>
+                <h3>人均 5C</h3>
+                <p>Per Capita Goal</p>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Slide 9: 公文佈達 -->
-<div class="slide-container bleed-image-layout" id="slide9">
-    <div class="bleed-text-side">
-        <h2 class="slide-title">公文佈達與重要資訊</h2>
-        <div class="content-area">
-            <h3><i class="fa-solid fa-bullhorn" style="color:#10b981;"></i> 團隊公告</h3>
-            <ul style="list-style: none; padding: 0; margin-top: 20px;">
-                <li style="margin-bottom: 25px;"><i class="fa-solid fa-check-double" style="color:#10b981;"></i> 12/26 為業績核實結算日。</li>
-                <li style="margin-bottom: 25px;"><i class="fa-solid fa-check-double" style="color:#10b981;"></i> 12/27 起正式啟動 115 年第一工作月。</li>
-            </ul>
-        </div>
-    </div>
-    <div class="image-container">
-        <img class="bleed-image-side" src="http://googleusercontent.com/image_collection/image_retrieval/15728691530944362418" alt="Team announcements">
-    </div>
-</div>
-
-<!-- Slide 10: 時間軸 (更新後) -->
-<div class="slide-container" id="slide10">
-    <h2 class="slide-title">12月重點時程追蹤 (工作月曆)</h2>
+<!-- Slide 3: NEW Daily Report (Updated Date to 12/22) -->
+<div class="slide-container" id="slide3">
+    <h2 class="slide-title">每日日報表 (12/22 Daily Report)</h2>
     <div class="content-area">
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="dot"></div>
-                <h4>11/26 - 12/26</h4>
-                <p>業績報表追蹤期</p>
-            </div>
-            <div class="timeline-item">
-                <div class="dot" style="background: #ef4444; box-shadow: 0 0 20px #ef4444;"></div>
-                <h4>12/26</h4>
-                <p>12工業績結算</p>
-            </div>
-            <div class="timeline-item">
-                <div class="dot" style="background: #3b82f6; box-shadow: 0 0 20px #3b82f6;"></div>
-                <h4>12/27</h4>
-                <p>1工正式啟動日</p>
-            </div>
-        </div>
-        <div style="text-align: center; margin-top: 100px;">
-            <p style="color: #10b981; font-weight: bold; font-size: 32px; letter-spacing: 10px;">掌握節奏，奪取勝利！</p>
-        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>日期 (Date)</th>
+                    <th>姓名 (Name)</th>
+                    <th>保費 (FYP)</th>
+                    <th>受理業績 (FYC)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data Row 1 -->
+                <tr>
+                    <td>12/22</td>
+                    <td>林淑慧</td>
+                    <td>108,887</td>
+                    <td>19,600</td>
+                    <td style="color: #fbbf24; font-weight: bold;"><i class="fa-solid fa-fire"></i> New!</td>
+                </tr>
+                <!-- Data Row 2 -->
+                <tr>
+                    <td>12/22</td>
+                    <td>孫桂英</td>
+                    <td>621,154</td>
+                    <td>7,611</td>
+                    <td style="color: #fbbf24; font-weight: bold;"><i class="fa-solid fa-fire"></i> New!</td>
+                </tr>
+                <!-- Data Row 3 -->
+                <tr>
+                    <td>12/22</td>
+                    <td>林君溥</td>
+                    <td>9,600</td>
+                    <td>2,800</td>
+                </tr>
+                <!-- Data Row 4 -->
+                <tr>
+                    <td>12/24</td>
+                    <td>孫桂英</td>
+                    <td>11,606</td>
+                    <td>2,453</td>
+                </tr>
+                <!-- Data Row 5 -->
+                <tr>
+                    <td>12/26</td>
+                    <td>孫桂英</td>
+                    <td>216,404</td>
+                    <td>39,848</td>
+                </tr>
+
+                 <!-- Total Row -->
+                 <tr class="highlight-row" style="border-top: 2px solid #fbbf24;">
+                    <td colspan="3" style="text-align: right; padding-right: 40px;">本日合計 (Total)</td>
+                    <td>51,300</td>
+                    <td>-</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
 
-<!-- Slide 11: Q&A -->
-<div class="slide-container" id="slide11" style="background-image: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.95)), url('http://googleusercontent.com/image_collection/image_retrieval/2563878775969452390'); background-size: cover; align-items: center; justify-content: center; text-align: center;">
-    <h2 style="font-size: 80px; color: #10b981;">Q & A</h2>
-    <p style="font-size: 24px; color: #cbd5e1; margin-bottom: 40px;">感謝 114 年每一位英雄的付出</p>
-    <div style="height: 2px; width: 100px; background: #10b981; margin: 0 auto 40px;"></div>
-    <p style="font-size: 20px; color: #94a3b8;">中銘通訊處 TC813 績效組 | 敬啟</p>
+<!-- Slide 4: January Schedule -->
+<div class="slide-container" id="slide4">
+    <h2 class="slide-title">1月份 行程表 (January Schedule)</h2>
+    <div class="content-area">
+        <div class="timeline-layout">
+            <div class="timeline-line"></div>
+            
+            <!-- Timeline Item 1 -->
+            <div class="timeline-item">
+                <div class="timeline-dot">12/30</div>
+                <div class="timeline-content">
+                    <h4>12/27~12/30</h4>
+                    <p>首二日</p>
+                </div>
+            </div>
+
+            <!-- Timeline Item 2: Current Location -->
+            <div class="timeline-item">
+                <div class="timeline-dot" style="background: #fbbf24; color: #0f172a; border-color: #fff; transform: scale(1.1); box-shadow: 0 0 15px rgba(251, 191, 36, 0.5);">12/29</div>
+                <div class="timeline-content">
+                    <h4 style="color: #fff; text-decoration: underline decoration-yellow-400;">目前所在位置</h4>
+                    <p style="color: #fbbf24;">(Today)</p>
+                </div>
+            </div>
+
+            <!-- Timeline Item 3 -->
+            <div class="timeline-item">
+                <div class="timeline-dot">01/11</div>
+                <div class="timeline-content">
+                    <h4>12/27~01/11</h4>
+                    <p>首二週</p>
+                    <p style="font-size: 16px; color: #fbbf24; font-weight: bold; margin-top: 8px;">
+                        <i class="fa-solid fa-sack-dollar"></i> 達成5C拿500元
+                    </p>
+                </div>
+            </div>
+
+            <!-- Timeline Item 4 -->
+            <div class="timeline-item">
+                <div class="timeline-dot">01/26</div>
+                <div class="timeline-content">
+                    <h4>01/26</h4>
+                    <p style="color: #ef4444; font-weight: bold;">業績截止日</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </div>
 
 </body>
